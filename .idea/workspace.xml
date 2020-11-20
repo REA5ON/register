@@ -11,24 +11,13 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd55aff-0331-47ad-8c10-241af10751b9" name="Default Changelist" comment="&quot;First commit&quot;">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+    <list default="true" id="3fd55aff-0331-47ad-8c10-241af10751b9" name="Default Changelist" comment="&quot;Second commit&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/create_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media.html" beforeDir="false" afterPath="$PROJECT_DIR$/media.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/page_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/page_register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security.html" beforeDir="false" afterPath="$PROJECT_DIR$/security.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/status.html" beforeDir="false" afterPath="$PROJECT_DIR$/status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +61,7 @@
       <workItem from="1605772738927" duration="72000" />
       <workItem from="1605773061315" duration="8957000" />
       <workItem from="1605812917578" duration="982000" />
-      <workItem from="1605856926534" duration="11242000" />
+      <workItem from="1605856926534" duration="12357000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;First commit&quot;">
       <created>1605773146677</created>
@@ -81,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605773146677</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="&quot;Second commit&quot;">
+      <created>1605868441580</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605868441580</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,7 +97,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;First commit&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;First commit&quot;" />
+    <MESSAGE value="&quot;Second commit&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Second commit&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1147" y="209" key="#PHP" timestamp="1605773859739">
@@ -131,7 +128,7 @@
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/functions.php</url>
           <line>26</line>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

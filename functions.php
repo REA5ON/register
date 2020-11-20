@@ -24,7 +24,7 @@ function add_user($email, $password)
     //Запрос на вставку
     $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
     $statement = $pdo->prepare($sql);
-    $result = $statement->execute([
+    $statement->execute([
         "email" => $email,
         "password" => password_hash($password, PASSWORD_DEFAULT)
     ]);
