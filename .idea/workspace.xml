@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd55aff-0331-47ad-8c10-241af10751b9" name="Default Changelist" comment="" />
+    <list default="true" id="3fd55aff-0331-47ad-8c10-241af10751b9" name="Default Changelist" comment="&quot;First commit&quot;">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/create_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media.html" beforeDir="false" afterPath="$PROJECT_DIR$/media.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/page_login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/page_register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security.html" beforeDir="false" afterPath="$PROJECT_DIR$/security.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/status.html" beforeDir="false" afterPath="$PROJECT_DIR$/status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/users.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,8 +38,18 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
+    <include_path>
+      <path value="C:/php" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1kV55gzMvUOjQsJ7gB1VWt51xVZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -19,6 +57,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../10_lessons" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -31,16 +70,70 @@
       <option name="presentableId" value="Default" />
       <updated>1605772737490</updated>
       <workItem from="1605772738927" duration="72000" />
+      <workItem from="1605773061315" duration="8957000" />
+      <workItem from="1605812917578" duration="982000" />
+      <workItem from="1605856926534" duration="11242000" />
     </task>
+    <task id="LOCAL-00001" summary="&quot;First commit&quot;">
+      <created>1605773146677</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605773146677</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;First commit&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;First commit&quot;" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="1147" y="209" key="#PHP" timestamp="1605773859739">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state x="1147" y="209" key="#PHP/0.46.1920.1034@0.46.1920.1034" timestamp="1605773859739" />
+    <state x="1219" y="321" key="FileChooserDialogImpl" timestamp="1605863481518">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state x="1219" y="321" key="FileChooserDialogImpl/0.46.1920.1034@0.46.1920.1034" timestamp="1605863481518" />
+    <state x="1274" y="490" key="NewPhpFileDialog" timestamp="1605791889512">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state x="1274" y="490" key="NewPhpFileDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1605791889512" />
     <state x="0" y="208" key="SettingsEditor" timestamp="1605772808993">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="0" y="208" key="SettingsEditor/0.46.1920.1034@0.46.1920.1034" timestamp="1605772808993" />
+    <state x="1103" y="275" width="672" height="678" key="search.everywhere.popup" timestamp="1605775349679">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state x="1103" y="275" width="672" height="678" key="search.everywhere.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1605775349679" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/functions.php</url>
+          <line>26</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
