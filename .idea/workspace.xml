@@ -18,18 +18,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3fd55aff-0331-47ad-8c10-241af10751b9" name="Default Changelist" comment="&quot;Second commit&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/create_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media.html" beforeDir="false" afterPath="$PROJECT_DIR$/media.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/page_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/page_profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_register.php" beforeDir="false" afterPath="$PROJECT_DIR$/page_register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security.html" beforeDir="false" afterPath="$PROJECT_DIR$/security.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/status.html" beforeDir="false" afterPath="$PROJECT_DIR$/status.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/users.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +77,10 @@
       <workItem from="1607471787522" duration="3667000" />
       <workItem from="1607483149686" duration="41000" />
       <workItem from="1607539008662" duration="12991000" />
+      <workItem from="1607585207390" duration="1217000" />
+      <workItem from="1607600815338" duration="7025000" />
+      <workItem from="1607621026104" duration="182000" />
+      <workItem from="1607621817137" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;First commit&quot;">
       <created>1605773146677</created>

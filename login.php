@@ -8,43 +8,13 @@ $email = $_POST["email"];
 $password = $_POST["password"];
 
 
+$is_not_logged_in = is_not_logged_in($email, $password);
 
-$user = logged_in($email, $password);
 
-
-if ($user == false) {
+//если не зарегистрирован
+if ($is_not_logged_in == true) {
     set_flash_message("danger", "Неправильный email или пароль");
     redirect_to("page_login.php");
 }
 
-
-
-//если не зарегистрирован
-if (is_not_logged_in()) {
-    redirect_to("page_login.php");
-}
-
-
 redirect_to("users.php");
-
-get_all_users();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//set_flash_message("success", "Добро пожаловать, " . $_SESSION['email'] . "!");
-//redirect_to("users.php");

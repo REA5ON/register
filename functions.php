@@ -24,7 +24,6 @@ function get_user_by_email($email)
     return $user;
 }
 
-;
 
 
 /*
@@ -52,7 +51,6 @@ function add_user($email, $password)
     return $pdo->lastInsertId();
 }
 
-;
 
 /*
     Parameters:
@@ -63,7 +61,7 @@ function add_user($email, $password)
     Return value: boolean
 */
 
-function logged_in($email, $password)
+function is_not_logged_in($email, $password)
 {
     $pdo = new PDO("mysql:host=localhost; dbname=new_project", "root", "root");
     $sql = "SELECT * FROM users WHERE email=:email AND password=:password";
@@ -73,16 +71,16 @@ function logged_in($email, $password)
         'password' => $password,
     ]);
 
+    //записываем в массив
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-
+    //проверяем полученый массив
     if (!empty($user) && count($user)) {
+        //запись в сессию
         $_SESSION['email'] = $user['email'];
         $_SESSION['roles'] = $user['roles'];
         $_SESSION['id'] = $user['id'];
         $_SESSION['auth'] = true;
-        return true;
-    } else {
         return false;
     }
 
@@ -144,20 +142,6 @@ function redirect_to($patch)
 function is_admin()
 {
     if (isset($_SESSION) && $_SESSION['roles'] == 'admin') {
-        return true;
-    }
-}
-
-
-/*
-    Parameters: --
-    Description: не авторизирован?
-
-    Return value: bool
-*/
-function is_not_logged_in()
-{
-    if ($_SESSION['auth'] == false) {
         return true;
     }
 }
