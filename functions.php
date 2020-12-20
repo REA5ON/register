@@ -39,13 +39,13 @@ function add_user($email, $password)
     //Подключаемся к БД
     $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
     //Запрос на вставку
-    $sql = "INSERT INTO users (email, password, roles) VALUES (:email, :password, :roles)";
+    $sql = "INSERT INTO users (email, password, role) VALUES (:email, :password, :role)";
     $statement = $pdo->prepare($sql);
     $statement->execute([
         "email" => $email,
         "password" => $password,
         //создается в БД для каждого нового пользователя статус "user" при регистрации
-        "roles" => "user",
+        "role" => "user",
     ]);
 
     return $pdo->lastInsertId();
@@ -78,11 +78,14 @@ function is_not_logged_in($email, $password)
     if (!empty($user) && count($user)) {
         //запись в сессию
         $_SESSION['email'] = $user['email'];
-        $_SESSION['roles'] = $user['roles'];
+        $_SESSION['role'] = $user['role'];
         $_SESSION['id'] = $user['id'];
         $_SESSION['auth'] = true;
         return false;
+    } else {
+        return true;
     }
+
 
 }
 
@@ -134,15 +137,17 @@ function redirect_to($patch)
 
 
 /*
-    Parameters: --
+    Parameters: $role
     Description: админ или нет?
 
     Return value: bool
 */
 function is_admin()
 {
-    if (isset($_SESSION) && $_SESSION['roles'] == 'admin') {
+    if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
         return true;
+    } else {
+        return false;
     }
 }
 

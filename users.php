@@ -32,7 +32,7 @@ require "functions.php"
                         <a class="nav-link" href="page_login.php">Войти</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Выйти</a>
+                        <a class="nav-link" href="<?php session_destroy() ?>">Выйти</a>
                     </li>
                 </ul>
             </div>
@@ -47,9 +47,9 @@ require "functions.php"
             </div>
             <div class="row">
                 <div class="col-xl-12">
-                    <?php if (is_admin()): ?>
-                    <a class="btn btn-success" href="create_user.php">Добавить</a>
-                    <?php endif; ?>
+                    <?php if (isset($_SESSION['role']) && is_admin() == true) {
+                        echo $_SESSION['admin_add_button'];
+                    } ?>
                     <div class="border-faded bg-faded p-3 mb-g d-flex mt-3">
                         <input type="text" id="js-filter-contacts" name="filter-contacts" class="form-control shadow-inset-2 form-control-lg" placeholder="Найти пользователя">
                         <div class="btn-group btn-group-lg btn-group-toggle hidden-lg-down ml-3" data-toggle="buttons">
@@ -66,7 +66,6 @@ require "functions.php"
             <div class="row" id="js-contacts">
                 <?php foreach (get_all_users() as $person) : ?>
                 <div class="col-xl-4">
-
                     <div id="c_1" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="<?php echo $person['data_filter_tags'] ?>">
                         <div class="card-body border-faded border-top-0 border-left-0 border-right-0 rounded-top">
                             <div class="d-flex flex-row align-items-center">
@@ -76,12 +75,9 @@ require "functions.php"
                                 <div class="info-card-text flex-1">
                                     <a href="javascript:void(0);" class="fs-xl text-truncate text-truncate-lg text-info" data-toggle="dropdown" aria-expanded="false">
                                         <?php echo $person['name'] ?>
-                                        <?php if (is_admin()) : ?>
                                         <i class="fal fas fa-cog fa-fw d-inline-block ml-1 fs-md"></i>
                                         <i class="fal fa-angle-down d-inline-block ml-1 fs-md"></i>
-                                        <?php endif; ?>
                                     </a>
-                                    <?php if (is_admin()) : ?>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="edit.php?id=<?php echo $person['id']?>">
                                             <i class="fa fa-edit"></i>
@@ -101,7 +97,6 @@ require "functions.php"
                                             Удалить
                                         </a>
                                     </div>
-                                    <?php endif; ?>
                                     <span class="text-truncate text-truncate-xl"><?php echo $person['job'] ?></span>
                                 </div>
                                 <button class="js-expand-btn btn btn-sm btn-default d-none" data-toggle="collapse" data-target="#c_1 > .card-body + .card-body" aria-expanded="false">
@@ -135,6 +130,7 @@ require "functions.php"
                 </div>
                 <?php endforeach; ?>
             </div>
+
         </main>
      
         <!-- BEGIN Page Footer -->
