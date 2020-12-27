@@ -31,7 +31,7 @@ require "functions.php"
                     <a class="nav-link" href="page_login.php">Войти</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Выйти</a>
+                    <a class="nav-link" href="<?php session_destroy() ?>">Выйти</a>
                 </li>
             </ul>
         </div>
@@ -40,12 +40,13 @@ require "functions.php"
         <div class="subheader">
             <h1 class="subheader-title">
                 <i class='subheader-icon fal fa-plus-circle'></i> Добавить пользователя
+                <?php display_flash_message("danger"); ?>
             </h1>
 
 
 
         </div>
-        <form action="">
+        <form action="add_new_users.php" method="post">
             <div class="row">
                 <div class="col-xl-6">
                     <div id="panel-1" class="panel">
@@ -57,25 +58,25 @@ require "functions.php"
                                 <!-- username -->
                                 <div class="form-group">
                                     <label class="form-label" for="simpleinput">Имя</label>
-                                    <input type="text" id="simpleinput" class="form-control">
+                                    <input type="text" id="simpleinput" name="username" class="form-control">
                                 </div>
 
                                 <!-- title -->
                                 <div class="form-group">
                                     <label class="form-label" for="simpleinput">Место работы</label>
-                                    <input type="text" id="simpleinput" class="form-control">
+                                    <input type="text" id="simpleinput" name="job" class="form-control">
                                 </div>
 
                                 <!-- tel -->
                                 <div class="form-group">
                                     <label class="form-label" for="simpleinput">Номер телефона</label>
-                                    <input type="text" id="simpleinput" class="form-control">
+                                    <input type="text" id="simpleinput" name="phone" class="form-control">
                                 </div>
 
                                 <!-- address -->
                                 <div class="form-group">
                                     <label class="form-label" for="simpleinput">Адрес</label>
-                                    <input type="text" id="simpleinput" class="form-control">
+                                    <input type="text" id="simpleinput" name="address" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -92,20 +93,20 @@ require "functions.php"
                                 <!-- email -->
                                 <div class="form-group">
                                     <label class="form-label" for="simpleinput">Email</label>
-                                    <input type="text" id="simpleinput" class="form-control">
+                                    <input type="text" id="simpleinput" name="email" class="form-control">
                                 </div>
 
                                 <!-- password -->
                                 <div class="form-group">
                                     <label class="form-label" for="simpleinput">Пароль</label>
-                                    <input type="password" id="simpleinput" class="form-control">
+                                    <input type="password" id="simpleinput" name="password" class="form-control">
                                 </div>
 
                                 
                                 <!-- status -->
                                 <div class="form-group">
                                     <label class="form-label" for="example-select">Выберите статус</label>
-                                    <select class="form-control" id="example-select">
+                                    <select class="form-control" name="status" id="example-select">
                                         <option>Онлайн</option>
                                         <option>Отошел</option>
                                         <option>Не беспокоить</option>
@@ -114,7 +115,7 @@ require "functions.php"
 
                                 <div class="form-group">
                                     <label class="form-label" for="example-fileinput">Загрузить аватар</label>
-                                    <input type="file" id="example-fileinput" class="form-control-file">
+                                    <input type="file" id="example-fileinput" name="avatar" class="form-control-file">
                                 </div>
                             </div>
                         </div>

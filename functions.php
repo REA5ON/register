@@ -14,7 +14,7 @@ function get_user_by_email($email)
     $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
 
     //создаем запрос
-    $sql = "SELECT * FROM users WHERE email=:email";
+    $sql = "SELECT * FROM peoples WHERE email=:email";
     $statement = $pdo->prepare($sql);
     $statement->execute(["email" => $email]);
     //fetch_assoc формирует ответ из БД в нормальный массив
@@ -23,7 +23,6 @@ function get_user_by_email($email)
     // возвращаем $user (то есть весь столбец "email" будет записан в $user)
     return $user;
 }
-
 
 
 /*
@@ -39,7 +38,7 @@ function add_user($email, $password)
     //Подключаемся к БД
     $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
     //Запрос на вставку
-    $sql = "INSERT INTO users (email, password, role) VALUES (:email, :password, :role)";
+    $sql = "INSERT INTO peoples (email, password, role) VALUES (:email, :password, :role)";
     $statement = $pdo->prepare($sql);
     $statement->execute([
         "email" => $email,
@@ -48,7 +47,9 @@ function add_user($email, $password)
         "role" => "user",
     ]);
 
-    return $pdo->lastInsertId();
+    $_SESSION['id'] = $pdo->lastInsertId();
+
+    return $_SESSION['id'];
 }
 
 
@@ -64,7 +65,7 @@ function add_user($email, $password)
 function is_not_logged_in($email, $password)
 {
     $pdo = new PDO("mysql:host=localhost; dbname=new_project", "root", "root");
-    $sql = "SELECT * FROM users WHERE email=:email AND password=:password";
+    $sql = "SELECT * FROM peoples WHERE email=:email AND password=:password";
     $statement = $pdo->prepare($sql);
     $statement->execute([
         'email' => $email,
@@ -78,8 +79,8 @@ function is_not_logged_in($email, $password)
     if (!empty($user) && count($user)) {
         //запись в сессию
         $_SESSION['email'] = $user['email'];
+        //$_SESSION['id'] = $user['id'];
         $_SESSION['role'] = $user['role'];
-        $_SESSION['id'] = $user['id'];
         $_SESSION['auth'] = true;
         return false;
     } else {
@@ -138,13 +139,13 @@ function redirect_to($patch)
 
 /*
     Parameters: $role
-    Description: админ или нет?
+    Description: админ?
 
     Return value: bool
 */
-function is_admin()
+function is_admin($role)
 {
-    if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
+    if ($_SESSION['auth'] = true && $role == 'admin') {
         return true;
     } else {
         return false;
@@ -153,8 +154,9 @@ function is_admin()
 
 
 //вывод всех пользователей
-function get_all_users() {
-    $pdo = new PDO("mysql:host=localhost;dbname=new_project","root", "root");
+function get_all_users()
+{
+    $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
     $sql = "SELECT * FROM peoples";
     $statement = $pdo->prepare($sql);
     $statement->execute();
@@ -163,5 +165,27 @@ function get_all_users() {
     return $people;
 }
 
+/*
+    Parameters:
+            string - $username
+            string - $job_title
+            string - $phone
+            string - $address
+    Description: Редактировать профиль
+    Return value: boolean
+*/
+function edit_information($user_id, $username, $job, $phone, $address)
+{
+    $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
+    $sql = "UPDATE peoples SET (username, job, phone, address) VALUES (:username, :job, :phone, :address) WHERE id='$user_id'";
+    $statement = $pdo->prepare($sql);
+    $statement->execute([
+        'id' => $user_id,
+        'username' => $username,
+        'job' => $job,
+        'phone' => $phone,
+        'address' => $address,
+    ]);
 
+}
 

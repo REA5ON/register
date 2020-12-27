@@ -17,7 +17,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fd55aff-0331-47ad-8c10-241af10751b9" name="Default Changelist" comment="&quot;Second commit&quot;">
+      <change afterPath="$PROJECT_DIR$/add_new_users.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/create_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/users.php" afterDir="false" />
     </list>
@@ -90,7 +93,13 @@
       <workItem from="1608125836435" duration="195000" />
       <workItem from="1608398723314" duration="3175000" />
       <workItem from="1608474103264" duration="2404000" />
-      <workItem from="1608476586720" duration="2213000" />
+      <workItem from="1608476586720" duration="2790000" />
+      <workItem from="1608897394154" duration="15914000" />
+      <workItem from="1608989538812" duration="2850000" />
+      <workItem from="1609002960639" duration="1331000" />
+      <workItem from="1609006568481" duration="9959000" />
+      <workItem from="1609089589012" duration="1567000" />
+      <workItem from="1609097215311" duration="1100000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;First commit&quot;">
       <created>1605773146677</created>
@@ -161,21 +170,32 @@
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="1219" y="321" key="FileChooserDialogImpl/0.46.1920.1034@0.46.1920.1034" timestamp="1606458373065" />
-    <state x="1274" y="490" key="NewPhpFileDialog" timestamp="1606501065574">
+    <state x="1274" y="490" key="NewPhpFileDialog" timestamp="1608904075374">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="1274" y="490" key="NewPhpFileDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1606501065574" />
+    <state x="1274" y="490" key="NewPhpFileDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1608904075374" />
     <state x="0" y="208" key="SettingsEditor" timestamp="1605772808993">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="0" y="208" key="SettingsEditor/0.46.1920.1034@0.46.1920.1034" timestamp="1605772808993" />
-    <state x="616" y="262" key="run.anything.popup" timestamp="1607543298557">
+    <state x="616" y="262" key="run.anything.popup" timestamp="1609014830198">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="616" y="262" key="run.anything.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1607543298557" />
+    <state x="616" y="262" key="run.anything.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1609014830198" />
     <state x="1103" y="275" width="672" height="678" key="search.everywhere.popup" timestamp="1605775349679">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="1103" y="275" width="672" height="678" key="search.everywhere.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1605775349679" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/users.php</url>
+          <line>77</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

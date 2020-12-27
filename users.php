@@ -1,6 +1,7 @@
 <?php
 session_start();
-require "functions.php"
+require "functions.php";
+$role = $_SESSION['role'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +47,7 @@ require "functions.php"
             </div>
             <div class="row">
                 <div class="col-xl-12">
-                    <?php if (is_admin()) {
+                    <?php if (is_admin($role)) {
                         echo "<a class=\"btn btn-success\" href=\"create_user.php\">Добавить</a>";
                     } ?>
                     <div class="border-faded bg-faded p-3 mb-g d-flex mt-3">
@@ -73,13 +74,13 @@ require "functions.php"
                                 </span>
                                 <div class="info-card-text flex-1">
                                     <a href="javascript:void(0);" class="fs-xl text-truncate text-truncate-lg text-info" data-toggle="dropdown" aria-expanded="false">
-                                        <?php echo $person['name'] ?>
-                                        <?php if (is_admin()) : ?>
+                                        <?php echo $person['username'] ?>
+                                        <?php if (is_admin($role)) : ?>
                                         <i class="fal fas fa-cog fa-fw d-inline-block ml-1 fs-md"></i>
                                         <i class="fal fa-angle-down d-inline-block ml-1 fs-md"></i>
                                         <?php endif; ?>
                                     </a>
-                                    <?php if (is_admin()) : ?>
+                                    <?php if (is_admin($role)) : ?>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="edit.php?id=<?php echo $person['id']?>">
                                             <i class="fa fa-edit"></i>
@@ -110,9 +111,9 @@ require "functions.php"
                         </div>
                         <div class="card-body p-0 collapse show">
                             <div class="p-3">
-                                <a href="<?php echo $person['tel_href'] ?>" class="mt-1 d-block fs-sm fw-400 text-dark">
-                                    <i class="fas fa-mobile-alt text-muted mr-2"></i> <?php echo $person['telephone'] ?></a>
-                                <a href="<?php echo $person['email_href'] ?>" class="mt-1 d-block fs-sm fw-400 text-dark">
+                                <a href="tel:<?php echo $person['phone'] ?>" class="mt-1 d-block fs-sm fw-400 text-dark">
+                                    <i class="fas fa-mobile-alt text-muted mr-2"></i> <?php echo $person['phone'] ?></a>
+                                <a href="mailto:<?php echo $person['email'] ?>" class="mt-1 d-block fs-sm fw-400 text-dark">
                                     <i class="fas fa-mouse-pointer text-muted mr-2"></i> <?php echo $person['email'] ?></a>
                                 <address class="fs-sm fw-400 mt-4 text-muted">
                                     <i class="fas fa-map-pin mr-2"></i> <?php echo $person['address'] ?></address>
