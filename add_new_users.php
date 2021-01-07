@@ -6,18 +6,20 @@ require "functions.php";
 
 $email = $_POST["email"];
 $password = $_POST["password"];
-//$role = $_SESSION['role'];
+
+$username = $_POST['username'];
+$job = $_POST['job'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+$status = $_POST['status'];
+$image = $_FILES['avatar'];
+
+$vk = $_POST['vk'];
+$telegram = $_POST['telegram'];
+$instagram = $_POST['instagram'];
 
 
-
-$is_not_logged_in = is_not_logged_in($email, $password);
-//$is_admin = is_admin($role);
-
-//если не зарегистрирован и не админ - перенаправляем на страницу входа
-//if ($is_not_logged_in == true && $is_admin == false) {
-//    redirect_to("page_login.php");
-//}
-
+//$is_not_logged_in = is_not_logged_in($email, $password);
 
 
 $user = get_user_by_email($email);
@@ -31,16 +33,18 @@ if (!empty($user)) {
 }
 
 
-//если пустой имейл - добавляем пользователя
-add_user($email, $password);
+//если не занят имейл - добавляем пользователя
+$user_id = add_user($email, $password);
 
 
-$user_id = $_SESSION['id'];
-$username = $_POST['username'];
-$job = $_POST['job'];
-$phone = $_POST['phone'];
-$address = $_POST['address'];
+//редактируем
+edit_information($user_id, $username, $job, $phone, $address);
 
+//статус
+set_status($user_id, $status);
 
-edit_information($user_id, $username, $job, $phone,$address);
+//аватар
+upload_avatar($user_id, $image);
 
+//социальные сети
+add_social_links($user_id, $vk, $telegram, $instagram);

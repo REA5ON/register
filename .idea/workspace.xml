@@ -17,11 +17,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fd55aff-0331-47ad-8c10-241af10751b9" name="Default Changelist" comment="&quot;Second commit&quot;">
-      <change afterPath="$PROJECT_DIR$/add_new_users.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ff6dc9b7efe6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ff6dd3e64470.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ff6ddcc56c17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ff6ddffd85ff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ff6de22efea3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ff6de461c6c2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_new_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_new_users.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/create_user.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/users.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +55,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -99,7 +105,14 @@
       <workItem from="1609002960639" duration="1331000" />
       <workItem from="1609006568481" duration="9959000" />
       <workItem from="1609089589012" duration="1567000" />
-      <workItem from="1609097215311" duration="1100000" />
+      <workItem from="1609097215311" duration="1584000" />
+      <workItem from="1609101741004" duration="671000" />
+      <workItem from="1609585971972" duration="4871000" />
+      <workItem from="1609592829231" duration="1771000" />
+      <workItem from="1609602631791" duration="588000" />
+      <workItem from="1609924829356" duration="21126000" />
+      <workItem from="1609956973988" duration="2478000" />
+      <workItem from="1610008883656" duration="2908000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;First commit&quot;">
       <created>1605773146677</created>
@@ -153,6 +166,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="&quot;First commit&quot;" />
     <MESSAGE value="&quot;Second commit&quot;" />
     <option name="LAST_COMMIT_MESSAGE" value="&quot;Second commit&quot;" />
@@ -178,6 +192,10 @@
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="0" y="208" key="SettingsEditor/0.46.1920.1034@0.46.1920.1034" timestamp="1605772808993" />
+    <state x="1147" y="166" width="585" height="801" key="find.popup" timestamp="1609935138443">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state x="1147" y="166" width="585" height="801" key="find.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1609935138443" />
     <state x="616" y="262" key="run.anything.popup" timestamp="1609014830198">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
@@ -186,16 +204,5 @@
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="1103" y="275" width="672" height="678" key="search.everywhere.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1605775349679" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/users.php</url>
-          <line>77</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

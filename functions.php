@@ -35,6 +35,11 @@ function get_user_by_email($email)
 */
 function add_user($email, $password)
 {
+
+    if (empty($email) OR empty($password)) {
+        return false;
+    }
+
     //Подключаемся к БД
     $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
     //Запрос на вставку
@@ -47,9 +52,10 @@ function add_user($email, $password)
         "role" => "user",
     ]);
 
-    $_SESSION['id'] = $pdo->lastInsertId();
 
-    return $_SESSION['id'];
+    $user_id = $pdo->lastInsertId();
+    return $user_id;
+
 }
 
 
@@ -143,9 +149,20 @@ function redirect_to($patch)
 
     Return value: bool
 */
-function is_admin($role)
+function is_admin()
 {
-    if ($_SESSION['auth'] = true && $role == 'admin') {
+    //подключаемся к БД
+    $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
+
+    //создаем запрос
+    $sql = "SELECT * FROM peoples WHERE role=:role";
+    $statement = $pdo->prepare($sql);
+    $statement->execute();
+    //fetch_assoc формирует ответ из БД в нормальный массив
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+
+    if ($user == 'admin') {
         return true;
     } else {
         return false;
@@ -177,15 +194,78 @@ function get_all_users()
 function edit_information($user_id, $username, $job, $phone, $address)
 {
     $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
-    $sql = "UPDATE peoples SET (username, job, phone, address) VALUES (:username, :job, :phone, :address) WHERE id='$user_id'";
+    $sql = "UPDATE peoples SET username=:username, job=:job, phone=:phone, address=:address WHERE id='$user_id'";
     $statement = $pdo->prepare($sql);
     $statement->execute([
-        'id' => $user_id,
         'username' => $username,
         'job' => $job,
         'phone' => $phone,
         'address' => $address,
     ]);
-
 }
 
+/*
+    Parameters:
+            string - $status
+    Description:  Установить статус
+    Return value: NULL
+*/
+function set_status($user_id, $status) {
+    $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
+    $sql = "UPDATE peoples SET status=:status WHERE id='$user_id'";
+    $statement = $pdo->prepare($sql);
+    $statement->execute([
+        'status' => $status,
+    ]);
+}
+
+/*
+    Parameters:
+            string - $image
+    Description:  Загрузить аватар
+    Return value: NULL / string(path)
+*/
+function upload_avatar($user_id, $image) {
+    $name = $image['name'];
+    //PATHINFO_EXTENSION - возвращает расширение файла
+    $ext = pathinfo($name, PATHINFO_EXTENSION);
+    $path = 'img/demo/avatars/';
+
+
+    //проверяем на формат загружаемых данных
+    $valid_types = array("gif", "jpg", "png", "jpeg");
+    if (!in_array($ext, $valid_types)) {
+        set_flash_message("danger", "Недопустимое расширение картинки");
+        redirect_to("create_user.php");
+    }
+
+
+    //уникальное имя
+    $new_name = uniqid();
+    //склеиваем
+    $file = $path . $new_name . '.' . $ext;
+    //move_uploaded_file(откуда, куда);
+    move_uploaded_file($image['tmp_name'], $file);
+
+    //Записываем в БД
+    $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
+    $sql = "UPDATE peoples SET image='$file' WHERE id='$user_id'";
+    $statement = $pdo->prepare($sql);
+    $statement->execute([
+        'image' => $file,
+    ]);
+}
+
+
+function add_social_links($user_id, $vk, $telegram, $instagram) {
+    //Подключаемся к БД
+    $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
+    //Запрос на вставку
+    $sql = "UPDATE peoples SET vk=:vk, telegram=:telegram, instagram=:instagram WHERE id='$user_id'";
+    $statement = $pdo->prepare($sql);
+    $statement->execute([
+        "vk" => $vk,
+        "telegram" => $telegram,
+        'instagram' => $instagram,
+    ]);
+}
