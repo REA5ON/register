@@ -1,6 +1,14 @@
 <?php
 session_start();
 require "functions.php";
+
+$auth = $_SESSION['auth'];
+
+$is_not_logged_in = is_not_logged_in($auth);
+
+if ($is_not_logged_in == true) {
+    redirect_to("page_login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +39,7 @@ require "functions.php";
                         <a class="nav-link" href="page_login.php">Войти</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php session_destroy() ?>">Выйти</a>
+                        <a class="nav-link" href="">Выйти</a>
                     </li>
                 </ul>
             </div>
@@ -65,15 +73,15 @@ require "functions.php";
             <div class="row" id="js-contacts">
                 <?php foreach (get_all_users() as $person) : ?>
                 <div class="col-xl-4">
-                    <div id="c_1" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="<?php echo $person['username'] ?>">
+                    <div id="c_1" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="<?=$person['username'] ?>">
                         <div class="card-body border-faded border-top-0 border-left-0 border-right-0 rounded-top">
                             <div class="d-flex flex-row align-items-center">
-                                <span class="status status-<?php echo $person['status'] ?> mr-3">
-                                    <span class="rounded-circle profile-image d-block " style="background-image:url('<?php echo $person['image'] ?>'); background-size: cover;"></span>
+                                <span class="status status-<?=$person['status'] ?> mr-3">
+                                    <span class="rounded-circle profile-image d-block " style="background-image:url('<?=$person['image'] ?>'); background-size: cover;"></span>
                                 </span>
                                 <div class="info-card-text flex-1">
                                     <a href="javascript:void(0);" class="fs-xl text-truncate text-truncate-lg text-info" data-toggle="dropdown" aria-expanded="false">
-                                        <?php echo $person['username'] ?>
+                                        <?=$person['username'] ?>
                                         <?php if (is_admin()) : ?>
                                         <i class="fal fas fa-cog fa-fw d-inline-block ml-1 fs-md"></i>
                                         <i class="fal fa-angle-down d-inline-block ml-1 fs-md"></i>
@@ -81,16 +89,16 @@ require "functions.php";
                                     </a>
                                     <?php if (is_admin()) : ?>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="edit.php?id=<?php echo $person['id']?>">
+                                        <a class="dropdown-item" href="edit.php?id=<?=$person['id']?>">
                                             <i class="fa fa-edit"></i>
                                         Редактировать</a>
-                                        <a class="dropdown-item" href="security.php?id=<?php echo $person['id']?>">
+                                        <a class="dropdown-item" href="security.php?id=<?=$person['id']?>">
                                             <i class="fa fa-lock"></i>
                                         Безопасность</a>
-                                        <a class="dropdown-item" href="status.php?id=<?php echo $person['id']?>">
+                                        <a class="dropdown-item" href="status.php?id=<?=$person['id']?>">
                                             <i class="fa fa-sun"></i>
                                         Установить статус</a>
-                                        <a class="dropdown-item" href="media.php?id=<?php echo $person['id']?>">
+                                        <a class="dropdown-item" href="media.php?id=<?=$person['id']?>">
                                             <i class="fa fa-camera"></i>
                                             Загрузить аватар
                                         </a>
@@ -100,7 +108,7 @@ require "functions.php";
                                         </a>
                                     </div>
                                     <?php endif; ?>
-                                    <span class="text-truncate text-truncate-xl"><?php echo $person['job'] ?></span>
+                                    <span class="text-truncate text-truncate-xl"><?=$person['job'] ?></span>
                                 </div>
                                 <button class="js-expand-btn btn btn-sm btn-default d-none" data-toggle="collapse" data-target="#c_1 > .card-body + .card-body" aria-expanded="false">
                                     <span class="collapsed-hidden">+</span>
@@ -110,12 +118,12 @@ require "functions.php";
                         </div>
                         <div class="card-body p-0 collapse show">
                             <div class="p-3">
-                                <a href="tel:<?php echo $person['phone'] ?>" class="mt-1 d-block fs-sm fw-400 text-dark">
-                                    <i class="fas fa-mobile-alt text-muted mr-2"></i> <?php echo $person['phone'] ?></a>
-                                <a href="mailto:<?php echo $person['email'] ?>" class="mt-1 d-block fs-sm fw-400 text-dark">
-                                    <i class="fas fa-mouse-pointer text-muted mr-2"></i> <?php echo $person['email'] ?></a>
+                                <a href="tel:<?=$person['phone'] ?>" class="mt-1 d-block fs-sm fw-400 text-dark">
+                                    <i class="fas fa-mobile-alt text-muted mr-2"></i> <?=$person['phone'] ?></a>
+                                <a href="mailto:<?=$person['email'] ?>" class="mt-1 d-block fs-sm fw-400 text-dark">
+                                    <i class="fas fa-mouse-pointer text-muted mr-2"></i> <?=$person['email'] ?></a>
                                 <address class="fs-sm fw-400 mt-4 text-muted">
-                                    <i class="fas fa-map-pin mr-2"></i> <?php echo $person['address'] ?></address>
+                                    <i class="fas fa-map-pin mr-2"></i> <?=$person['address'] ?></address>
                                 <div class="d-flex flex-row">
                                     <a href="javascript:void(0);" class="mr-2 fs-xxl" style="color:#4680C2">
                                         <i class="fab fa-vk"></i>

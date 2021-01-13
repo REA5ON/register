@@ -19,7 +19,6 @@ $telegram = $_POST['telegram'];
 $instagram = $_POST['instagram'];
 
 
-//$is_not_logged_in = is_not_logged_in($email, $password);
 
 
 $user = get_user_by_email($email);
@@ -48,3 +47,9 @@ upload_avatar($user_id, $image);
 
 //социальные сети
 add_social_links($user_id, $vk, $telegram, $instagram);
+
+//формируем сообщение
+set_flash_message("success", "Новый пользователь успешно создан!");
+
+//перенаправляем
+redirect_to("users.php");

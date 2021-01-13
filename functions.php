@@ -35,11 +35,6 @@ function get_user_by_email($email)
 */
 function add_user($email, $password)
 {
-
-    if (empty($email) OR empty($password)) {
-        return false;
-    }
-
     //Подключаемся к БД
     $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
     //Запрос на вставку
@@ -58,6 +53,22 @@ function add_user($email, $password)
 
 }
 
+/*
+    Parameters:
+            string - $email
+            string - $password
+    Description: авторизировать пользователя, запись в сессию
+    //add_to_session
+    Return value: boolean
+*/
+function is_not_logged_in($auth) {
+    if (!isset($_SESSION['auth'])) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 
 /*
     Parameters:
@@ -68,7 +79,7 @@ function add_user($email, $password)
     Return value: boolean
 */
 
-function is_not_logged_in($email, $password)
+function logged_in($email, $password)
 {
     $pdo = new PDO("mysql:host=localhost; dbname=new_project", "root", "root");
     $sql = "SELECT * FROM peoples WHERE email=:email AND password=:password";
@@ -82,18 +93,18 @@ function is_not_logged_in($email, $password)
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 
     //проверяем полученый массив
-    if (!empty($user) && count($user)) {
-        //запись в сессию
-        $_SESSION['email'] = $user['email'];
-        //$_SESSION['id'] = $user['id'];
-        $_SESSION['role'] = $user['role'];
-        $_SESSION['auth'] = true;
+    if (empty($user)) {
+        set_flash_message("danger", "Неправильный email или пароль");
         return false;
-    } else {
-        return true;
     }
 
 
+    //запись в сессию
+    $_SESSION['id'] = $user['id'];
+    $_SESSION['email'] = $user['email'];
+    $_SESSION['role'] = $user['role'];
+    $_SESSION['auth'] = true;
+    return true;
 }
 
 /*
@@ -151,22 +162,11 @@ function redirect_to($patch)
 */
 function is_admin()
 {
-    //подключаемся к БД
-    $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
-
-    //создаем запрос
-    $sql = "SELECT * FROM peoples WHERE role=:role";
-    $statement = $pdo->prepare($sql);
-    $statement->execute();
-    //fetch_assoc формирует ответ из БД в нормальный массив
-    $user = $statement->fetch(PDO::FETCH_ASSOC);
-
-
-    if ($user == 'admin') {
+     if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
         return true;
     } else {
-        return false;
-    }
+         return false;
+     }
 }
 
 

@@ -1,6 +1,16 @@
 <?php
 session_start();
-require "functions.php"
+require "functions.php";
+
+$auth = $_SESSION['auth'];
+
+
+$is_not_logged_in = is_not_logged_in($auth);
+$is_admin = is_admin();
+
+if ($is_not_logged_in == true | $is_admin == false) {
+    redirect_to("page_login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +41,7 @@ require "functions.php"
                     <a class="nav-link" href="page_login.php">Войти</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php session_destroy() ?>">Выйти</a>
+                    <a class="nav-link" href="">Выйти</a>
                 </li>
             </ul>
         </div>

@@ -17,16 +17,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fd55aff-0331-47ad-8c10-241af10751b9" name="Default Changelist" comment="&quot;Second commit&quot;">
-      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ff6dc9b7efe6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ff6dd3e64470.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ff6ddcc56c17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ff6ddffd85ff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ff6de22efea3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ff6de461c6c2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ff86657e3848.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ffe20a854b67.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ffe4c4f5b833.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/5ffe4cc1dd081.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/add_new_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_new_users.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/create_user.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/users.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +111,15 @@
       <workItem from="1609602631791" duration="588000" />
       <workItem from="1609924829356" duration="21126000" />
       <workItem from="1609956973988" duration="2478000" />
-      <workItem from="1610008883656" duration="2908000" />
+      <workItem from="1610008883656" duration="4238000" />
+      <workItem from="1610021365957" duration="2899000" />
+      <workItem from="1610026484325" duration="613000" />
+      <workItem from="1610041503278" duration="4840000" />
+      <workItem from="1610052320146" duration="766000" />
+      <workItem from="1610111953979" duration="4445000" />
+      <workItem from="1610470804351" duration="5192000" />
+      <workItem from="1610489669185" duration="1419000" />
+      <workItem from="1610499482208" duration="1987000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;First commit&quot;">
       <created>1605773146677</created>
@@ -184,10 +191,10 @@
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="1219" y="321" key="FileChooserDialogImpl/0.46.1920.1034@0.46.1920.1034" timestamp="1606458373065" />
-    <state x="1274" y="490" key="NewPhpFileDialog" timestamp="1608904075374">
+    <state x="1274" y="490" key="NewPhpFileDialog" timestamp="1610471212923">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="1274" y="490" key="NewPhpFileDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1608904075374" />
+    <state x="1274" y="490" key="NewPhpFileDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1610471212923" />
     <state x="0" y="208" key="SettingsEditor" timestamp="1605772808993">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
@@ -196,10 +203,10 @@
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="1147" y="166" width="585" height="801" key="find.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1609935138443" />
-    <state x="616" y="262" key="run.anything.popup" timestamp="1609014830198">
+    <state x="616" y="262" key="run.anything.popup" timestamp="1610045418225">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="616" y="262" key="run.anything.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1609014830198" />
+    <state x="616" y="262" key="run.anything.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1610045418225" />
     <state x="1103" y="275" width="672" height="678" key="search.everywhere.popup" timestamp="1605775349679">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
