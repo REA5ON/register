@@ -162,7 +162,7 @@ function redirect_to($patch)
 */
 function is_admin()
 {
-     if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+     if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
         return true;
     } else {
          return false;
@@ -256,7 +256,15 @@ function upload_avatar($user_id, $image) {
     ]);
 }
 
-
+/*
+    Parameters:
+            string - $user_id,
+            string - $vk,
+            string - $telegram,
+            string - $instagram
+    Description:  Добавить социальные сети
+    Return value: -
+*/
 function add_social_links($user_id, $vk, $telegram, $instagram) {
     //Подключаемся к БД
     $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
@@ -268,4 +276,40 @@ function add_social_links($user_id, $vk, $telegram, $instagram) {
         "telegram" => $telegram,
         'instagram' => $instagram,
     ]);
+}
+
+/*
+    Parameters:
+            int - $logged_user_id,
+            int - $edit_user_id
+    Description:  проверить автор ли текущий пользователь
+    Return value: boolean
+*/
+function is_author($logged_user_id, $edit_user_id) {
+    if ($logged_user_id == $edit_user_id) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+/*
+    Parameters:
+            int - $user_id,
+    Description:  получить пользователя по id
+    Return value: array
+*/
+function get_user_by_id($id) {
+    //подключаемся к БД
+    $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
+
+    //создаем запрос
+    $sql = "SELECT * FROM peoples WHERE id=:id";
+    $statement = $pdo->prepare($sql);
+    $statement->execute(["id" => $id]);
+    //fetch_assoc формирует ответ из БД в нормальный массив
+    $get_id = $statement->fetch(PDO::FETCH_ASSOC);
+
+    return $get_id;
 }

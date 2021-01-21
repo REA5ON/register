@@ -9,6 +9,8 @@ $is_not_logged_in = is_not_logged_in($auth);
 if ($is_not_logged_in == true) {
     redirect_to("page_login.php");
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +49,7 @@ if ($is_not_logged_in == true) {
 
         <main id="js-page-content" role="main" class="page-content mt-3">
             <?php display_flash_message("success"); ?>
+            <?php display_flash_message("danger"); ?>
             <div class="subheader">
                 <h1 class="subheader-title">
                     <i class='subheader-icon fal fa-users'></i> Список пользователей
@@ -82,12 +85,12 @@ if ($is_not_logged_in == true) {
                                 <div class="info-card-text flex-1">
                                     <a href="javascript:void(0);" class="fs-xl text-truncate text-truncate-lg text-info" data-toggle="dropdown" aria-expanded="false">
                                         <?=$person['username'] ?>
-                                        <?php if (is_admin()) : ?>
+                                        <?php if (is_admin() || $_SESSION['id'] == $person['id']) : ?>
                                         <i class="fal fas fa-cog fa-fw d-inline-block ml-1 fs-md"></i>
                                         <i class="fal fa-angle-down d-inline-block ml-1 fs-md"></i>
                                         <?php endif; ?>
                                     </a>
-                                    <?php if (is_admin()) : ?>
+                                    <?php if (is_admin() || $_SESSION['id'] == $person['id']) : ?>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="edit.php?id=<?=$person['id']?>">
                                             <i class="fa fa-edit"></i>
