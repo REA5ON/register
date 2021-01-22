@@ -13,7 +13,10 @@ $id = $_GET['id'];
 $is_not_logged_in = is_not_logged_in($auth);
 $is_admin = is_admin();
 $is_author = is_author($logged_user_id, $edit_user_id);
+
+
 $get_id = get_user_by_id($id);
+$_SESSION['edit_id'] = $get_id['id'];
 
 
 
