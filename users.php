@@ -83,7 +83,7 @@ if ($is_not_logged_in == true) {
                                     <span class="rounded-circle profile-image d-block " style="background-image:url('<?=$person['image'] ?>'); background-size: cover;"></span>
                                 </span>
                                 <div class="info-card-text flex-1">
-                                    <a href="javascript:void(0);" class="fs-xl text-truncate text-truncate-lg text-info" data-toggle="dropdown" aria-expanded="false">
+                                    <a href="page_profile.php?id=<?=$person['id']?>" class="fs-xl text-truncate text-truncate-lg text-info" data-toggle="dropdown" aria-expanded="false">
                                         <?=$person['username'] ?>
                                         <?php if (is_admin() || $_SESSION['id'] == $person['id']) : ?>
                                         <i class="fal fas fa-cog fa-fw d-inline-block ml-1 fs-md"></i>

@@ -16,4 +16,4 @@ edit_information($user_id, $username, $job, $phone, $address);
 set_flash_message("success", "Профиль успешно обновлен");
 
 
-redirect_to("page_profile.php?=$user_id");
+redirect_to("page_profile.php?id=$user_id");

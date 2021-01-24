@@ -33,10 +33,6 @@ if ($is_admin == false) {
 }
 
 
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
