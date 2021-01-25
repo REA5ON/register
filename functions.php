@@ -313,3 +313,24 @@ function get_user_by_id($id) {
 
     return $get_id;
 }
+
+/*
+    Parameters:
+            int - $user_id,
+            string - $email
+            string - $password
+    Description:  Редактировать входные данные: email or password
+    Return value: null | boolean
+*/
+
+function edit_credentials($user_id, $email, $password) {
+    //Подключаемся к БД
+    $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
+    //Запрос на бновление
+    $sql = "UPDATE peoples SET email=:email, password=:password WHERE id='$user_id'";
+    $statement = $pdo->prepare($sql);
+    $statement->execute([
+        "email" => $email,
+        "password" => $password,
+    ]);
+}
