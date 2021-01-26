@@ -17,11 +17,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fd55aff-0331-47ad-8c10-241af10751b9" name="Default Changelist" comment="&quot;Second commit&quot;">
-      <change afterPath="$PROJECT_DIR$/edit_status.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edit_media.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/60105ee1c7257.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/60105f35421a0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/6010607291b62.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/demo/avatars/null_image.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/page_profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/status.php" beforeDir="false" afterPath="$PROJECT_DIR$/status.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media.php" beforeDir="false" afterPath="$PROJECT_DIR$/media.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/users.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +58,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -137,7 +141,9 @@
       <workItem from="1611614021937" duration="908000" />
       <workItem from="1611650765239" duration="1784000" />
       <workItem from="1611652575829" duration="1844000" />
-      <workItem from="1611654577738" duration="654000" />
+      <workItem from="1611654577738" duration="1402000" />
+      <workItem from="1611682654685" duration="1789000" />
+      <workItem from="1611684474458" duration="1798000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;First commit&quot;">
       <created>1605773146677</created>
@@ -209,14 +215,14 @@
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="1219" y="321" key="FileChooserDialogImpl/0.46.1920.1034@0.46.1920.1034" timestamp="1606458373065" />
-    <state x="1274" y="490" key="NewPhpFileDialog" timestamp="1611650855232">
+    <state x="1274" y="490" key="NewPhpFileDialog" timestamp="1611682814495">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="1274" y="490" key="NewPhpFileDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1611650855232" />
-    <state x="0" y="208" key="SettingsEditor" timestamp="1605772808993">
+    <state x="1274" y="490" key="NewPhpFileDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1611682814495" />
+    <state x="0" y="208" key="SettingsEditor" timestamp="1611682796886">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="0" y="208" key="SettingsEditor/0.46.1920.1034@0.46.1920.1034" timestamp="1605772808993" />
+    <state x="0" y="208" key="SettingsEditor/0.46.1920.1034@0.46.1920.1034" timestamp="1611682796886" />
     <state x="1147" y="166" width="585" height="801" key="find.popup" timestamp="1609935138443">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
@@ -229,16 +235,5 @@
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="1103" y="275" width="672" height="678" key="search.everywhere.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1605775349679" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/page_profile.php</url>
-          <line>54</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

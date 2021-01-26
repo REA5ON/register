@@ -1,3 +1,41 @@
+<?php
+session_start();
+
+
+require "functions.php";
+
+
+$auth = $_SESSION['auth'];
+$logged_user_id = $_SESSION['id'];
+$edit_user_id = $_GET['id'];
+$null_image ='img/demo/avatars/null_image.png';
+
+
+$is_not_logged_in = is_not_logged_in($auth);
+
+$is_admin = is_admin();
+
+$is_author = is_author($logged_user_id, $edit_user_id);
+
+
+$get_id = get_user_by_id($edit_user_id);
+
+
+if ($is_not_logged_in == true) {
+    redirect_to("page_login.php");
+}
+
+//Если не админ и не автор
+if ($is_admin == false && $is_author == false) {
+    set_flash_message("danger", "Можно редактировать только свой профиль!");
+    redirect_to("users.php");
+}
+
+//Записываем/обновляем в сессию id полученый с GET параметром
+$_SESSION['edit_id'] = $_GET['id'];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +56,7 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="users.php">Главная <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -38,7 +76,7 @@
             </h1>
 
         </div>
-        <form action="">
+        <form action="edit_media.php" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-xl-6">
                     <div id="panel-1" class="panel">
@@ -48,12 +86,17 @@
                             </div>
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <img src="img/demo/authors/josh.png" alt="" class="img-responsive" width="200">
+                                    <img src="<?php if (!empty($get_id['image'])) {
+                                        echo $get_id['image'];
+                                    } else {
+                                        echo $null_image;
+                                    }
+                                        ?>" alt="" class="img-responsive" width="200">
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label" for="example-fileinput">Выберите аватар</label>
-                                    <input type="file" id="example-fileinput" class="form-control-file">
+                                    <input type="file" name="avatar" id="example-fileinput" class="form-control-file">
                                 </div>
 
 

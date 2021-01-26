@@ -232,14 +232,6 @@ function upload_avatar($user_id, $image) {
     $path = 'img/demo/avatars/';
 
 
-    //проверяем на формат загружаемых данных
-    $valid_types = array("gif", "jpg", "png", "jpeg");
-    if (!in_array($ext, $valid_types)) {
-        set_flash_message("danger", "Недопустимое расширение картинки");
-        redirect_to("create_user.php");
-    }
-
-
     //уникальное имя
     $new_name = uniqid();
     //склеиваем
@@ -334,3 +326,15 @@ function edit_credentials($user_id, $email, $password) {
         "password" => $password,
     ]);
 }
+
+///*
+//    Parameters:
+//            int - $user_id,
+//            string - $image
+//    Description:  Проверяет имеется ли аватар у пользователя
+//    Return value: null | boolean
+//*/
+//function has_image($user_id, $image) {
+//
+//
+//}
