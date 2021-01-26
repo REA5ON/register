@@ -24,7 +24,7 @@ if ($is_not_logged_in == true) {
     redirect_to("page_login.php");
 }
 
-
+//Если не админ и не автор
 if ($is_admin == false && $is_author == false) {
     set_flash_message("danger", "Можно редактировать только свой профиль!");
     redirect_to("users.php");
