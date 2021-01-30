@@ -12,6 +12,8 @@ if ($is_not_logged_in == true) {
 
 $get_id = get_user_by_id($id);
 
+$null_image ='img/demo/avatars/null_image.png';
+
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +45,7 @@ $get_id = get_user_by_id($id);
                         <a class="nav-link" href="login.php">Войти</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Выйти</a>
+                        <a class="nav-link" href="logout.php">Выйти</a>
                     </li>
                 </ul>
             </div>
@@ -62,7 +64,7 @@ $get_id = get_user_by_id($id);
                         <div class="row no-gutters row-grid">
                             <div class="col-12">
                                 <div class="d-flex flex-column align-items-center justify-content-center p-4">
-                                    <img src="<?=$get_id['image'] ?>" class="rounded-circle shadow-2 img-thumbnail" alt="">
+                                    <img src="<? has_image($get_id, $null_image); ?>" class="rounded-circle shadow-2 img-thumbnail" alt="">
                                     <h5 class="mb-0 fw-700 text-center mt-3">
                                         <?=$get_id['username'] ?>
                                         <small class="text-muted mb-0"><?=$get_id['address'] ?></small>

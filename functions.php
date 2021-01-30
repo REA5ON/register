@@ -327,14 +327,28 @@ function edit_credentials($user_id, $email, $password) {
     ]);
 }
 
-///*
-//    Parameters:
-//            int - $user_id,
-//            string - $image
-//    Description:  Проверяет имеется ли аватар у пользователя
-//    Return value: null | boolean
-//*/
-//function has_image($user_id, $image) {
-//
-//
-//}
+/*
+    Parameters:
+            int - $user_id,
+            string - $image
+    Description:  Проверяет имеется ли аватар у пользователя
+    Return value: null | boolean
+*/
+function has_image($user_id, $image) {
+    if (!empty($user_id['image'])) {
+        echo $user_id['image'];
+    } else {
+        echo $image;
+    }
+}
+
+
+function delete($user_id) {
+    $pdo = new PDO("mysql:host=localhost;dbname=new_project", "root", "root");
+    //Запрос на бновление
+    $sql = "DELETE FROM peoples WHERE id='$user_id'";
+    $statement = $pdo->prepare($sql);
+    $statement->execute();
+}
+
+

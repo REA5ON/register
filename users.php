@@ -41,7 +41,7 @@ $null_image ='img/demo/avatars/null_image.png';
                         <a class="nav-link" href="page_login.php">Войти</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Выйти</a>
+                        <a class="nav-link" href="logout.php">Выйти</a>
                     </li>
                 </ul>
             </div>
@@ -80,11 +80,7 @@ $null_image ='img/demo/avatars/null_image.png';
                         <div class="card-body border-faded border-top-0 border-left-0 border-right-0 rounded-top">
                             <div class="d-flex flex-row align-items-center">
                                 <span class="status status-<?=$person['status'] ?> mr-3">
-                                    <span class="rounded-circle profile-image d-block " style="background-image:url('<?php if (!empty($person['image'])) {
-                                        echo $person['image'];
-                                    } else {
-                                        echo $null_image;
-                                    } ?>'); background-size: cover;"></span>
+                                    <span class="rounded-circle profile-image d-block " style="background-image:url('<?php has_image($person, $null_image);?>'); background-size: cover;"></span>
                                 </span>
                                 <div class="info-card-text flex-1">
                                     <a href="page_profile.php?id=<?=$person['id']?>" class="fs-xl text-truncate text-truncate-lg text-info" data-toggle="dropdown" aria-expanded="false">
@@ -109,7 +105,7 @@ $null_image ='img/demo/avatars/null_image.png';
                                             <i class="fa fa-camera"></i>
                                             Загрузить аватар
                                         </a>
-                                        <a href="#" class="dropdown-item" onclick="return confirm('are you sure?');">
+                                        <a href="delete.php?id=<?=$person['id']?>" class="dropdown-item" onclick="return confirm('Вы уверенны?');">
                                             <i class="fa fa-window-close"></i>
                                             Удалить
                                         </a>

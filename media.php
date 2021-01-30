@@ -64,7 +64,7 @@ $_SESSION['edit_id'] = $_GET['id'];
                     <a class="nav-link" href="page_login.php">Войти</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Выйти</a>
+                    <a class="nav-link" href="logout.php">Выйти</a>
                 </li>
             </ul>
         </div>
@@ -86,12 +86,7 @@ $_SESSION['edit_id'] = $_GET['id'];
                             </div>
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <img src="<?php if (!empty($get_id['image'])) {
-                                        echo $get_id['image'];
-                                    } else {
-                                        echo $null_image;
-                                    }
-                                        ?>" alt="" class="img-responsive" width="200">
+                                    <img src="<?php has_image($get_id, $null_image);?>" alt="" class="img-responsive" width="200">
                                 </div>
 
                                 <div class="form-group">
